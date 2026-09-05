@@ -1,6 +1,8 @@
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
+const WHATSAPP_NUMBER = '543816021143';
+
 const sectionIcons = { canciones: 'musica', regalos: 'regalos' };
 Object.entries(sectionIcons).forEach(([sectionId, iconName]) => {
   const title = document.querySelector(`#${sectionId} .section__title`);
@@ -50,7 +52,15 @@ $$('[data-calendar]').forEach((button) => button.addEventListener('click', () =>
   const link = document.createElement('a'); link.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' })); link.download = 'invitacion-martu.ics'; link.click(); URL.revokeObjectURL(link.href);
 }));
 
-$('[data-song-form]').addEventListener('submit', (event) => { event.preventDefault(); $('[data-song-message]').textContent = '¡Gracias por la sugerencia!'; event.currentTarget.reset(); });
+$('[data-song-form]').addEventListener('submit', (event) => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const name = form.querySelector('[name="name"]').value.trim() || 'Anónimo';
+  const song = form.querySelector('[name="song"]').value.trim();
+  const message = `Hola! soy _*${name}*_ y mi tema recomendado es: _*${song}*_`;
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+  form.reset();
+});
 $$('[data-copy]').forEach((button) => button.addEventListener('click', async (event) => {
     const btn = event.currentTarget;
     await navigator.clipboard?.writeText(btn.dataset.copy);
