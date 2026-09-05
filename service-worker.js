@@ -1,27 +1,27 @@
-const CACHE_NAME = 'cache-v10'; // Use a static or manually managed version
+const CACHE_NAME = 'cache-v11'; // Use a static or manually managed version
 const RESOURCES_TO_PRECACHE = [
-    'estilos/normalize.css?v10',
-    'estilos/styles.css?v10',
-    'estilos/mediaQueries.css?v10',
-    'javascript/script.js?v10',
+    'estilos/normalize.css?v11',
+    'estilos/styles.css?v11',
+    'estilos/mediaQueries.css?v11',
+    'javascript/script.js?v11',
     // Add more resources here if needed
 ];
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', function (event) {
     event.waitUntil(
-        caches.open(CACHE_NAME).then(function(cache) {
+        caches.open(CACHE_NAME).then(function (cache) {
             return cache.addAll(RESOURCES_TO_PRECACHE);
         })
     );
     self.skipWaiting();
 });
 
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', function (event) {
     // Clean up old caches
     event.waitUntil(
-        caches.keys().then(function(cacheNames) {
+        caches.keys().then(function (cacheNames) {
             return Promise.all(
-                cacheNames.map(function(cacheName) {
+                cacheNames.map(function (cacheName) {
                     if (cacheName !== CACHE_NAME) {
                         return caches.delete(cacheName);
                     }
@@ -32,16 +32,16 @@ self.addEventListener('activate', function(event) {
     self.clients.claim();
 });
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function (event) {
     // Check if the request is for an image
     if (event.request.destination === 'image') {
         event.respondWith(
-            caches.open(CACHE_NAME).then(function(cache) {
-                return fetch(event.request).then(function(response) {
+            caches.open(CACHE_NAME).then(function (cache) {
+                return fetch(event.request).then(function (response) {
                     // Update the cache with the latest version of the image
                     cache.put(event.request, response.clone());
                     return response;
-                }).catch(function() {
+                }).catch(function () {
                     return caches.match(event.request);
                 });
             })
@@ -49,9 +49,9 @@ self.addEventListener('fetch', function(event) {
     } else {
         // For other resources, serve from cache if available, otherwise fetch from network
         event.respondWith(
-            caches.match(event.request).then(function(response) {
+            caches.match(event.request).then(function (response) {
                 return response || fetch(event.request);
-            }).catch(function() {
+            }).catch(function () {
                 return fetch(event.request);
             })
         );

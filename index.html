@@ -1,472 +1,386 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta property="og:title" content="Martu - Mis XV Años" />
-    <meta property="og:description"
-        content="¡La cuenta regresiva ha comenzado! Descubre los detalles y confirma tu asistencia." />
-
-    <meta property="og:image" content="https://lepacode.github.io/15martu101026/assets/imagenes/miniatura.png" />
-    <meta property="og:url" content="https://lepacode.github.io/15martu101026/" />
-    <meta property="og:type" content="website" />
-
-    <meta property="og:image:type" content="image/png" />
-
-    <meta http-equiv="Cache-Control" content="no-store">
-    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="Cache-Control" content="s-maxage=3600">
-    <meta http-equiv="Cache-Control" content="max-age=3600">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/styles.css?v10">
-
-    <script src="cache.js"></script>
-    <script src="main.js"></script>
-    <title>Mis 15 años</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Invitación de More — Mis quince años" />
+  <meta property="og:title" content="Martu - Mis XV Años" />
+  <meta property="og:description"
+    content="¡La cuenta regresiva ha comenzado! Descubre los detalles y confirma tu asistencia." />
+  <meta property="og:image" content="https://lepacode.github.io/15martu101026/assets/imagenes/miniatura.png" />
+  <meta property="og:url" content="https://lepacode.github.io/15martu101026/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image:type" content="image/png" />
+  <script src="cache.js"></script>
+  <script src="main.js"></script>
+  <title>More — Invitación</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v11" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
 </head>
 
-<body>
+<body class="page">
 
-    <header class="header">
+  <div class="intro" id="intro" aria-labelledby="intro-title" style="display: none;">
+    <div class="intro__content">
+      <p class="intro__eyebrow">Mis quince años</p>
+      <p class="intro__date">10 · 10 · 2026</p>
+      <p class="intro__initial" aria-hidden="true">M</p>
+      <h1 class="intro__title" id="intro-title">More</h1>
+      <p class="intro__text">Te espero para celebrar una noche mágica</p>
+      <div class="intro__actions">
+        <button class="button button--light" type="button" data-open-invitation data-music="false">Abrir
+          invitación</button>
+        <button class="button button--outline" type="button" data-open-invitation data-music="true">Abrir con
+          música</button>
+      </div>
+    </div>
+    <p class="intro__credit">Creado con tecnología de invitaciones digitales</p>
+  </div>
 
-        <img class="header__img" src="assets/imagenes/vector_top.webp" alt="">
 
-        <div class="countdown-container">
-            <h2 class="countdown-title">Solo Falta....</h2>
-            <div class="countdown">
-                <div class="countdown-item">
-                    <span id="days">00</span>
-                    <p>Días</p>
-                </div>
-                <div class="countdown-item">
-                    <span id="hours">00</span>
-                    <p>Horas</p>
-                </div>
-                <div class="countdown-item">
-                    <span id="minutes">00</span>
-                    <p>Min</p>
-                </div>
-                <div class="countdown-item">
-                    <span id="seconds">00</span>
-                    <p>Seg</p>
-                </div>
-            </div>
+  <header class="header">
+
+    <img src="assets/imagenes/vector_top.webp" class="vector_top" alt="">
+
+    <div class="header__arrow" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+
+  </header>
+
+
+
+  <main class="invitation" id="inicio">
+
+    <section class="section contenedor" id="cuenta-regresiva">
+      <div class="section__inner">
+        <p class="section__eyebrow">Deslizá</p>
+        <h2 class="section__title"><lord-icon class="section__icon section__icon--timer"
+            data-src="./assets/icons/disco.json" src="./assets/icons/disco.json" trigger="loop"
+            colors="primary:#ff00ff,secondary:#ff00ff" aria-label="Temporizador"></lord-icon>Falta poco</h2>
+        <p class="section__lead">Para mi gran noche</p>
+        <div class="countdown" data-countdown data-date="2026-10-10T21:30:00-03:00" aria-label="Cuenta regresiva">
+          <div class="countdown__item"><strong data-unit="days">00</strong><span>días</span></div>
+          <div class="countdown__item"><strong data-unit="hours">00</strong><span>horas</span></div>
+          <div class="countdown__item"><strong data-unit="minutes">00</strong><span>min</span></div>
+          <div class="countdown__item"><strong data-unit="seconds">00</strong><span>seg</span></div>
         </div>
-        <div class="scroll-arrow">▾</div>
-    </header>
+      </div>
+    </section>
 
-    <main>
+    <section class="section contenedor" id="fecha">
+      <div class="section__inner fecha">
+        <h2 class="section__title"><lord-icon class="section__icon section__icon--calendar"
+            data-src="./assets/icons/calendario.json" src="./assets/icons/calendario.json" trigger="loop"
+            colors="primary:#ff00ff,secondary:#ff00ff" aria-label="Agendar fecha"></lord-icon>Agendá la fecha</h2>
+        <div class="calendar" aria-label="Calendario de octubre de 2026">
+          <div class="calendar__header"><span>Octubre</span><strong>2026</strong></div>
+          <div class="calendar__week">
+            <span>LUN</span><span>MAR</span><span>MIE</span><span>JUE</span><span>VIE</span><span>SAB</span><span>DOM</span>
+          </div>
+          <div class="calendar__grid" data-calendar-grid></div>
+        </div>
+      </div>
+    </section>
 
-        <section class="donde">
+    <section class="section contenedor" id="ubicaciones">
+      <div class="section__inner">
+        <h2 class="section__title"><lord-icon class="section__icon" data-src="./assets/icons/ubicacion.json"
+            src="./assets/icons/ubicacion.json" trigger="loop" colors="primary:#ff00ff,secondary:#ff00ff"
+            aria-label="Ubicación"></lord-icon>Cuándo y dónde</h2>
+        <p class="section__lead">Te espero para celebrar</p>
+        <div class="events">
+          <article class="event-card">
+            <img src="assets/vectores/misa.svg" class="event-card__icon" alt="">
+            <h3 class="event-card__title">Misa</h3>
+            <p class="event-card__date">Miércoles 7 de Octubre</p>
+            <p class="event-card__time">20:00</p>
+            <p class="event-card__place">Parroquia del Inmaculado Corazón de María</p>
+            <p class="event-card__detail">Santiago del Estero 871, San Miguel de Tucumán</p>
+            <div class="event-card__actions"><a class="button button--ghost"
+                href="https://maps.app.goo.gl/ygYvEL2MAS7ZUtTM9" target="_blank">Ver
+                ubicación</a></div>
+          </article>
+          <article class="event-card">
+            <img src="assets/vectores/fiesta.svg" class="event-card__icon" alt="">
+            <h3 class="event-card__title">Fiesta</h3>
+            <p class="event-card__date">Sábado 10 de Octubre</p>
+            <p class="event-card__time">21:30</p>
+            <p class="event-card__place">Te espero en Recorcholis Multiespacio</p>
+            <p class="event-card__detail">Av. Aconquija 1493, Yerba Buena, Tucumán</p>
+            <div class="event-card__actions"><a class="button button--ghost"
+                href="https://maps.app.goo.gl/fTz46CTor1FLFUX6A" target="_blank">Ver
+                ubicación</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-            <div class="evento misa contenedor" data-aos="fade-up">
-                <img class="evento__icon" src="assets/vectores/misa.svg" alt="Misa">
-                <h3 class="evento__title">Misa</h3>
-
-                <p class="evento__text">Acompañame en la misa de acción de gracias por mis 15 años, el día 7 de Octubre
-                    del 2026 a las 20:00hs en la Parroquia del Inmaculado Corazón de María, en calle Santiago del Estero
-                    871, San Miguel de Tucumán, Tucumán</p>
-                <img class="evento__img" src="assets/imagenes/misa.webp" alt="Misa">
-
-                <a class="boton__general" href="https://maps.app.goo.gl/u9E7g16CTiYhjCqe7" target="_blank">Ver
-                    ubicación</a>
-            </div>
-
-            <div class="evento fiesta contenedor" data-aos="fade-up">
-                <img class="evento__icon" src="assets/vectores/fiesta.svg" alt="Fiesta">
-                <h3 class="evento__title">Fiesta</h3>
-                <p class="evento__text">Te espero para celebrar juntos, el día 10 de Octubre del 2026 a las 21:30hs en
-                    salón "Recorcholis Multiespacio" en Av. Aconquija 1493, Yerba Buena, Tucumán</p>
-                <img class="evento__img" src="assets/imagenes/fiesta.webp" alt="Fiesta">
-
-                <a class="boton__general" href="https://maps.app.goo.gl/WhiELaEMBi9HeZWd8" target="_blank">Ver
-                    ubicación</a>
-            </div>
-
-        </section>
-
-
-        <section class="fotos" id="fotos" data-aos="fade-up" data-aos-duration="3000">
-
-            <h4 class="title title__fotos">Mis Fotos</h4>
-            <h6 class="fotos__subtitle">(Toca para ampliar)</h6>
-
-            <div class="fotos__container">
-                <a data-fancybox="gallery" href="assets/imagenes/fotos/uno.webp">
-                    <img class="fotos__img" src="assets/imagenes/fotos/uno.webp" alt="">
-                </a>
-                <a data-fancybox="gallery" href="assets/imagenes/fotos/dos.webp">
-                    <img class="fotos__img" src="assets/imagenes/fotos/dos.webp" alt="">
-                </a>
-                <a data-fancybox="gallery" href="assets/imagenes/fotos/tres.webp">
-                    <img class="fotos__img" src="assets/imagenes/fotos/tres.webp" alt="">
-                </a>
-                <a data-fancybox="gallery" href="assets/imagenes/fotos/cuatro.webp">
-                    <img class="fotos__img" src="assets/imagenes/fotos/cuatro.webp" alt="">
-                </a>
-                <a data-fancybox="gallery" href="assets/imagenes/fotos/cinco.webp">
-                    <img class="fotos__img" src="assets/imagenes/fotos/cinco.webp" alt="">
-                </a>
-                <a data-fancybox="gallery" href="assets/imagenes/fotos/seis.webp">
-                    <img class="fotos__img" src="assets/imagenes/fotos/seis.webp" alt="">
-                </a>
-                <a data-fancybox="gallery" href="assets/imagenes/fotos/siete.webp">
-                    <img class="fotos__img" src="assets/imagenes/fotos/siete.webp" alt="">
-                </a>
-                <a data-fancybox="gallery" href="assets/imagenes/fotos/ocho.webp">
-                    <img class="fotos__img" src="assets/imagenes/fotos/ocho.webp" alt="">
-                </a>
-                <a data-fancybox="gallery" href="assets/imagenes/fotos/nueve.webp">
-                    <img class="fotos__img" src="assets/imagenes/fotos/nueve.webp" alt="">
-                </a>
-                <a data-fancybox="gallery" href="assets/imagenes/fotos/diez.webp">
-                    <img class="fotos__img" src="assets/imagenes/fotos/diez.webp" alt="">
-                </a>
-            </div>
+    <section class="fotos">
+      <h3 class=" fotos__title" data-aos="fade-up">Book de fotos</h3>
 
 
-        </section>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
 
-        <div class="itinerarios" data-aos="fade-up">
-
-
-
-            <div class="itinerarios__container">
-                <h3 class="title itinerarios__title">Horarios</h3>
-
-                <div class="itinetrario__items">
-
-
-                    <div class="itinerario__item item1">
-                        <img class="itinerario__icon" src="assets/imagenes/iconos/iconoINVITADOS.webp" alt="">
-                        <p class="itinerario__text">Ingreso de Invitados</p>
-                        <p class="itinerario__hora">21:30hs
-                            <img class="itinerario__time" src="assets/vectores/reloj.svg" alt="">
-                        </p>
-                    </div>
-
-                    <div class="itinerario__item item2">
-                        <img class="itinerario__icon" src="assets/imagenes/iconos/iconoQUINCEAÑERA.webp" alt="">
-                        <p class="itinerario__text">Mi Ingreso</p>
-                        <p class="itinerario__hora">21:45hs
-                            <img class="itinerario__time" src="assets/vectores/reloj.svg" alt="">
-                        </p>
-                    </div>
-
-                    <div class="itinerario__item item3">
-                        <img class="itinerario__icon" src="assets/imagenes/iconos/iconoCENA.webp" alt="">
-                        <p class="itinerario__text">Cena</p>
-                        <p class="itinerario__hora">20:00hs
-                            <img class="itinerario__time" src="assets/vectores/reloj.svg" alt="">
-                        </p>
-                    </div>
-
-                    <div class="itinerario__item item4">
-                        <img class="itinerario__icon" src="assets/imagenes/iconos/iconoINICIOfiesta.webp" alt="">
-                        <p class="itinerario__text">Inicio del Baile</p>
-                        <p class="itinerario__hora">23:30hs
-                            <img class="itinerario__time" src="assets/vectores/reloj.svg" alt="">
-                        </p>
-                    </div>
-
-                    <div class="itinerario__item item5">
-                        <img class="itinerario__icon" src="assets/imagenes/iconos/iconoFIN.webp" alt="">
-                        <p class="itinerario__text">Fin de la fiesta</p>
-                        <p class="itinerario__hora">05:00hs
-                            <img class="itinerario__time" src="assets/vectores/reloj.svg" alt="">
-                        </p>
-                    </div>
-
-
-
-                </div>
-
-
-            </div>
+          <div class="swiper-slide">
+            <img src="assets/imagenes/fotos/uno.webp" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/imagenes/fotos/dos.webp" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/imagenes/fotos/tres.webp" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/imagenes/fotos/cuatro.webp" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/imagenes/fotos/cinco.webp" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/imagenes/fotos/seis.webp" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/imagenes/fotos/siete.webp" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/imagenes/fotos/ocho.webp" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/imagenes/fotos/nueve.webp" />
+          </div>
 
         </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
 
-        <section class="dresscode contenedor" id="dresscode">
-
-            <div class="dresscode__contenedor">
-
-                <h3 class="title title__dresscode">Dresscode</h3>
-                <div class="dresscode__icons">
-                    <img class="dresscode__icon" src="assets/vectores/dresscodeMUJER.svg" alt="">
-                    <img class="dresscode__icon" src="assets/vectores/dresscodeVARON.svg" alt="">
-
-                </div>
-                <h5 class="subtitle dresscode__subtitle">Elegante Formal</h5>
-                <!-- <p class="parrafo dresscode__note">Por favor no asistir con vestimenta en tonos Azul, Noche y Plateado -->
-                </p>
-                <img class="dresscode__img" src="assets/vectores/dresscodeVECTOR.svg" alt="">
-
-                <button class="boton__general" id="showImage">Ver Ejemplo</button>
-
-                <div id="lightbox" class="lightbox">
-                    <span id="closeButton" class="close-button">cerrar</span>
-                    <img src="assets/imagenes/drescode.webp" alt="Imagen" />
-                </div>
-                <img class="dresscode__wave" src="assets/vectores/wave2.svg" alt="">
-            </div>
-        </section>
-
-        <section class="regalos" data-aos="fade-up" data-aos-duration="3000">
-
-
-            <div class="regalos__container">
-                <h4 class="title title__regalos">Regalos</h4>
-                <img class="regalos__icon" src="assets/vectores/regalos.svg" alt="">
-
-                <p class="parrafo parrafo--regalos">
-                    "Quiero que sepas que tu presencia es lo más importante en mi fiesta y si deseas hacerme un
-                    presente, podrás dejarlo en mi mesa de regalos, o colocar tu sobrecito en la urna en la entrada del
-                    salón, también podés hacerlo por transferencia a mi cuenta... y recuerda:
-                    ¡Tu cariño es el mejor regalo que puedo recibir!"
-                </p>
-
-                <button id="mostrarBoton" class="boton__cta boton__general">Ver datos bancarios</button>
-                <div id="textoDesplegable" class="escondido regalos__data">
-
-                    <h6 class="regalo__date">Alias:</h6>
-                    <p class="name__alias" id="alias">sofi.diaz15.</p>
-                    <button class="alias__button" onclick="copyText()">
-                        <img class="copiar__icon" src="assets/vectores/copiar.svg" alt="">
-                        Copiar Alias</button>
-                    <div class="copy-message" id="copyMessage">¡Copiado!</div>
-
-
-                    <div class="lineRegalos"></div>
-
-
-                    <h6 class="regalo__date">CBU:</h6>
-                    <p class="name__cbu" id="cbuAlias"> 0000003100031216193732</p>
-                    <button class="cbu__button" onclick="copyCbuText()">
-                        <img class="copiar__icon" src="assets/vectores/copiar.svg" alt="">
-                        Copiar CBU</button>
-                    <div class="copy-message" id="copyCbuMessage" style="display: none;">¡Copiado!</div>
-                    <div style="display: none;"></div>
-                </div>
-            </div>
-            <img class="dresscode__fondo" src="assets/imagenes/graffiti3.webp" alt="">
-            <img class="dresscode__fondo2" src="assets/imagenes/graffiti4.webp" alt="">
-
-
-
-        </section>
-
-        <section class="album" id="album" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-
-            <div class="album__container" id="albumDigital">
-                <h3 class="title title__album">Etiquétame</h3>
-                <img class="album__img" src="assets/imagenes/album.webp" alt="">
-                <h3 class="parrafo parrafo--album">
-
-                    <p class="album__paragraph">Podés compartir tus fotos y videos de la fiesta en Instagram y
-                        etiquétame</p>
-                </h3>
-
-                <a class="boton__cta album__insta boton__general"
-                    href="https://www.instagram.com/martu.gmm/?utm_source=ig_web_button_share_sheet">
-                    <img class="album__icon" src="assets/vectores/insta.svg" alt=""> @martu.gmm</a>
-
-                <!-- ----- hastag ------- -->
-
-                <!-- <h4 class="parrafo parrafo__hashtag">#AquiHashtag</h4> -->
-
-            </div>
-            <img class="album__fondo" src="assets/imagenes/graffiti6.webp" alt="">
-            <img class="album__fondo2" src="assets/imagenes/graffiti5.webp" alt="">
-
-        </section>
-
-        <section class="playlist contenedor" id="playlist" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-            data-aos-duration="2000">
-            <div class="playlist__container">
-                <h4 class="title title__playlist">Playlist</h4>
-                <h4 class="subtitle subtitle__playlist">No existe fiesta sin buena música</h4>
-                <img class="playlist__img" src="assets/imagenes/dj.webp" alt="">
-                <h4 class="subtitle subtitle--playlist">¿Qué música crees que no debería faltar? <br> Ayúdame a
-                    elegir...
-                </h4>
-
-
-                <div class="playlist__mensaje" id="formContainer">
-                    <label class="playlist__label" for="userName">Nombre y Apellido:</label>
-                    <input class="playlist__input" type="text" id="userName" placeholder="Tu nombre y apellido">
-
-                    <label class="playlist__label playlist__label2" for="whatsappMessage">Recomendación:</label>
-                    <input class="playlist__input" type="text" id="whatsappMessage"
-                        placeholder="Escribe tu tema recomendado aquí">
-
-                    <button class="boton__cta boton__cta2 boton__general" id="botonplay1">Enviar Recomendación</button>
-                    <button class="boton__cta boton__cta5" id="botonplay2">Enviar a 2</button>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="confirmacion contenedor" id="correo" data-aos="fade-up">
-            <div class="confirmacion__container contenedor">
-                <h4 class="parrafo parrafo--confirmacion" data-aos="fade-right">
-                    Recordá que tenes hasta el día 1 de Octubre del 2026 para confirmar tu
-                    presencia <br>
-                </h4>
-
-
-
-                <a class="boton__cta3 boton__general" href="https://forms.gle/bfLBdjZsZW2yTUgQ9">Confirmar
-                    asistencia</a>
-
-            </div>
-        </section>
-
-
-        <section class="frase" data-aos="fade-up">
-
-            <div class="frase__container">
-                <img class="frase__icon" src="assets/vectores/apostrofe.svg" alt="">
-                <p class="frase__paragraph">
-                    Te espero para compartir mi gran noche
-                </p>
-                <img class="frase__icon2" src="assets/vectores/apostrofe.svg" alt="">
-            </div>
-        </section>
-
-
-
-
-
-
-    </main>
-
-    <footer class="footer__final1">
-        <div class="footer__inner1">
-            <div class="footer__brand1">
-                <p class="footer__text1">
-                    Página creada por <strong>Emmagus</strong>
-                    para los 15 años de <strong>Martu </strong>.<br>
-                    Todos los derechos reservados.
-                </p>
-
-            </div>
-
-
-
-
+    <section class="section contenedor" id="itinerario">
+      <div class="section__inner">
+        <h2 class="section__title">
+          <svg class="section__icon section__icon--reloj" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            fill="none" stroke="#ff00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line class="reloj-min" x1="12" y1="12" x2="12" y2="6"></line>
+            <line class="reloj-hor" x1="12" y1="12" x2="14" y2="14"></line>
+            <circle cx="12" cy="12" r="1" fill="#ff00ff"></circle>
+          </svg>
+          Itinerarios
+        </h2>
+        <p class="section__lead">Horario de la fiesta</p>
+        <div class="itinerario">
+          <div class="itinerario__item">
+            <span class="itinerario__label">Inicio</span>
+            <span class="itinerario__time">21:30</span>
+          </div>
+          <div class="itinerario__item">
+            <span class="itinerario__label">Fin</span>
+            <span class="itinerario__time">05:00</span>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <style>
-        /* ///////////////// footer /////////////////////// */
+    <section class="section contenedor" id="dress-code">
+      <div class="section__inner">
+        <h2 class="section__title"><lord-icon class="section__icon" data-src="./assets/icons/armario.json"
+            src="./assets/icons/armario.json" trigger="loop" colors="primary:#ff00ff,secondary:#ff00ff"
+            aria-label="Vestimenta"></lord-icon>Dress code</h2>
+        <div class="dress-code__icons">
+          <img src="assets/vectores/dresscodeMUJER.svg" alt="Mujer" class="dress-code__icon">
+          <img src="assets/vectores/dresscodeVARON.svg" alt="Varón" class="dress-code__icon">
+        </div>
+        <p class="dress-code">ELEGANTE FORMAL</p>
+      </div>
+    </section>
+
+    <section style="display: none;" class="section contenedor" id="canciones">
+      <div class="section__inner">
+        <h2 class="section__title">Sugerí una canción</h2>
+        <p class="section__lead">¿Qué tema no puede faltar en mi fiesta?</p>
+        <form class="form" data-song-form><label class="form__label">Tu nombre (opcional)<input class="form__input"
+              name="name" type="text" /></label><label class="form__label">Canción — Artista<input class="form__input"
+              name="song" type="text" required /></label><button class="button" type="submit">Sugerir
+            canción</button>
+          <p class="form-message" data-song-message role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section contenedor" id="regalos">
+      <div class="section__inner">
+        <h2 class="section__title">Regalos</h2>
+        <p class="section__copy">Quiero que sepas que tu presencia es lo más importante en mi fiesta y si deseas hacerme
+          un presente, podrás dejarlo en mi mesa de regalos, o también podés hacerlo por transferencia a mi cuenta... y
+          recuerda: ¡Tu cariño es el mejor regalo que puedo recibir!</p>
+        <div class="gift">
+          <h3 class="gift__title">Transferencia</h3>
+          <button class="alias" type="button" data-copy="martugmm.15"><span>Alias:</span>
+            <strong>martugmm.15</strong><small>Toca para copiar</small></button>
+          <button class="alias" type="button" data-copy="0000003100031216193732"><span>CBU:</span>
+            <strong>0000003100031216193732</strong><small>Toca para copiar</small></button>
+          <p class="gift__titular">Titular: Marcela Natalia Marder (Mercado Pago)</p>
+          <p class="form-message" data-alias-message role="status"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contenedor" id="confirmacion">
+      <div class="section__inner">
+        <h2 class="section__title section__title__active"><lord-icon class="section__icon section__icon--no-glow"
+            data-src="./assets/icons/sobre.json" src="./assets/icons/sobre.json" trigger="loop"
+            colors="primary:#ff00ff,secondary:#ff00ff" aria-label="Confirmación"></lord-icon>Confirmá tu asistencia</h2>
+        <p class="section__lead">Agradecemos tu respuesta</p>
+        <p class="section__copy">
+          Confirmá hasta el <strong>1 de Octubre
+        </p><a class="button"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeXafYZgf2evqIk3RyWWmNYHte_HoZxPY9AHFYZd4x1tXOT0A/viewform"
+          target="_blank" rel="noopener">Confirmar asistencia</a>
+        <p class="section__note section__note__active">Tocá el botón y completá tu confirmación en un instante.</strong>
+        </p>
+        <p class="form-message" data-confirm-message role="status"></p>
+      </div>
+    </section>
+
+    <section class="section-frase">
+      <div class="frase">
+        <img src="assets/vectores/apostrofe.svg" class="frase__comilla frase__comilla--izq" alt="">
+        <p class="frase__texto">Te espero para compartir mi gran noche</p>
+        <img src="assets/vectores/apostrofe.svg" class="frase__comilla frase__comilla--der" alt="">
+      </div>
+    </section>
 
 
-        .footer__final1 {
-            background: linear-gradient(180deg, #065645 0%, #71bc01 100%);
-            color: #ffffff;
-            padding: 3.5em 0;
+  </main>
+  <footer class="footer__final1">
+    <div class="footer__inner1">
+      <div class="footer__brand1">
+        <p class="footer__text1">
+          Página creada por <strong>Emmagus</strong>
+          para los 15 años de <strong>Martu </strong>.<br>
+          Todos los derechos reservados.
+        </p>
 
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-            font-size: 14px;
-            width: clamp(100px, 100%, 1800px);
-            text-align: center;
-            margin: 0 auto 0;
-        }
-
-        .footer__inner1 {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            align-items: center;
-            text-align: center;
-            padding: 0 1em;
-        }
-
-        .footer__text1 {
-            margin: 0;
-            line-height: 1.4;
-        }
-
-        .footer__text1 strong {
-            color: #ffffff;
-            font-weight: 700;
-        }
-
-        .footer__site1 {
-            display: inline-block;
-            margin-top: 8px;
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 600;
-            text-align: center;
-            font-size: 1.1rem;
-        }
-
-        .footer__site1:hover {
-            text-decoration: underline;
-        }
-
-        .footer__social3 {
-            display: flex;
-            flex-direction: row;
-            gap: 15px;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 5px;
-        }
-
-        .footer__follow1 {
-            margin: 0;
-            font-size: 14px;
-            color: #ffffff;
-            font-weight: 500;
-        }
-
-        .footer__final1 .icon-link1 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .footer__final1 .icon-link1 svg {
-            width: 28px !important;
-            height: 28px !important;
-            display: block;
-            margin: 0;
-        }
-
-        .footer__final1 .icon-link1:hover {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.4);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+      </div>
 
 
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-    <script src="js/script.js?v10"></script>
 
+
+    </div>
+  </footer>
+
+  <style>
+    /* ///////////////// footer /////////////////////// */
+
+
+    .footer__final1 {
+      background: linear-gradient(180deg, #ff00ff 0%, #a100a1 100%);
+      color: #ffffff;
+      padding: 3.5em 0;
+
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-size: 14px;
+      width: clamp(100px, 100%, 1800px);
+      text-align: center;
+      margin: 0 auto 0;
+    }
+
+    .footer__inner1 {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+      text-align: center;
+      padding: 0 1em;
+    }
+
+    .footer__text1 {
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .footer__text1 strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .footer__site1 {
+      display: inline-block;
+      margin-top: 8px;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 600;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .footer__site1:hover {
+      text-decoration: underline;
+    }
+
+    .footer__social3 {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 5px;
+    }
+
+    .footer__follow1 {
+      margin: 0;
+      font-size: 14px;
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .footer__final1 .icon-link1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .footer__final1 .icon-link1 svg {
+      width: 28px !important;
+      height: 28px !important;
+      display: block;
+      margin: 0;
+    }
+
+    .footer__final1 .icon-link1:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+
+  <button class="music-toggle" type="button" data-music-toggle aria-pressed="false" hidden>Activar música</button>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/script.js?v11"></script>
 </body>
 
 </html>

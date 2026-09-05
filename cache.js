@@ -25,19 +25,19 @@ function cargarRecursos(recursos, version) {
 
 function forzarActualizacionCache() {
     var recursos = [
-        'estilos/normalize.css?v10',
-        'estilos/styles.css?v10',
-        'estilos/mediaQueries.css?v10',
-        'javascript/script.js?v10',
+        'estilos/normalize.css?v11',
+        'estilos/styles.css?v11',
+        'estilos/mediaQueries.css?v11',
+        'javascript/script.js?v11',
         // Add other URLs of your resources here
     ];
-    var version = 'v10'; // Use a static or manually managed version
+    var version = 'v11'; // Use a static or manually managed version
     cargarRecursos(recursos, version);
 }
 
 function actualizarImagenes() {
     var imagenes = document.querySelectorAll('img');
-    imagenes.forEach(function(img) {
+    imagenes.forEach(function (img) {
         var srcOriginal = img.getAttribute('src');
         var nuevaSrc = srcOriginal.split('?')[0] + '?v=' + new Date().getTime();
         img.setAttribute('src', nuevaSrc);
