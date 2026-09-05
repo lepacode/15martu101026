@@ -62,6 +62,23 @@ $$('[data-copy]').forEach((button) => button.addEventListener('click', async (ev
 
 
 
+// --------------------------MUSICA----------------------------------
+
+const audio = document.querySelector('.musica audio');
+const playPauseButton = document.querySelector('.musica__button');
+
+playPauseButton.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        playPauseButton.classList.add('musica__button--playing');
+        playPauseButton.classList.remove('musica__button--paused');
+    } else {
+        audio.pause();
+        playPauseButton.classList.remove('musica__button--playing');
+        playPauseButton.classList.add('musica__button--paused');
+    }
+});
+
 
 
 

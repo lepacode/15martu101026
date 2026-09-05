@@ -289,6 +289,192 @@ body::before {
 }
 
 
+/* -------------------------MUSICA----------------------------- */
+
+
+.musica__button {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: #FF00FF;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    color: white;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    box-shadow: 0 5px 15px #FF00FF;
+    overflow: hidden;
+    z-index: 1000000;
+}
+
+.musica__button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.3), transparent 60%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.musica__button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px #ff6fff;
+}
+
+.musica__button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 10px rgba(229, 30, 116, 0.5);
+}
+
+.musica__icon {
+    position: absolute;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 2;
+}
+
+.musica__icon--play {
+    transform: translateX(0);
+    /* Eliminamos el desplazamiento lateral */
+    font-size: 28px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-40%, -50%);
+    /* Ajuste visual para centrar el triángulo */
+}
+
+.musica__icon--pause {
+    opacity: 0;
+    transform: translateX(2px);
+    font-size: 26px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.musica__button--playing .musica__icon--play {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.5);
+}
+
+.musica__button--playing .musica__icon--pause {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes shadowPulse {
+    0% {
+        box-shadow: 0 5px 15px rgba(229, 30, 123, 0.5),
+            0 0 0 0 rgba(229, 30, 153, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 5px 15px rgba(229, 30, 129, 0.7),
+            0 0 0 15px rgba(229, 30, 166, 0.063);
+    }
+
+    100% {
+        box-shadow: 0 5px 15px rgba(229, 30, 106, 0.5),
+            0 0 0 0 rgba(30, 136, 229, 0);
+    }
+}
+
+/* Transiciones mejoradas */
+@keyframes playToPause {
+    0% {
+        transform: scale(1);
+        border-radius: 50%;
+    }
+
+    10% {
+        transform: scale(0.9);
+    }
+
+    30% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pauseToPlay {
+    0% {
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(0.9);
+    }
+
+    30% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.musica__button--playing {
+    animation: playToPause 0.6s ease-in-out;
+    background: #ff6fff;
+}
+
+.musica {
+    position: relative;
+    display: inline-block;
+}
+
+.musica__button--playing {
+    animation: shadowPulse 2s infinite;
+}
+
+
+.musica__button--playing::before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    border: 2px solid rgba(243, 33, 163, 0.3);
+    z-index: -1;
+    animation: rippleWave 2s infinite ease-out;
+}
+
+@keyframes rippleWave {
+    0% {
+        transform: scale(0.92);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
 /* -------------- temporizador ------------------ */
 
 .countdown {
@@ -509,7 +695,7 @@ body::before {
     color: var(--ink);
     font: 400 13px var(--sans);
     cursor: pointer;
-    background-color: #ff74ff;
+    background-color: #fdfdfdcb;
     width: clamp(100px, 90%, 400px);
     margin: 0 auto;
 }
