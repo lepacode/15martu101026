@@ -46,8 +46,8 @@ $$('[data-calendar]').forEach((button) => button.addEventListener('click', () =>
   const fiesta = button.dataset.calendar === 'fiesta';
   const start = fiesta ? '20261010T213000' : '20261007T200000';
   const end = fiesta ? '20261011T030000' : '20261007T210000';
-  const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'BEGIN:VEVENT', `DTSTART:${start}`, `DTEND:${end}`, `SUMMARY:${fiesta ? 'Fiesta — More' : 'Misa — More'}`, 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
-  const link = document.createElement('a'); link.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' })); link.download = 'invitacion-more.ics'; link.click(); URL.revokeObjectURL(link.href);
+  const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'BEGIN:VEVENT', `DTSTART:${start}`, `DTEND:${end}`, `SUMMARY:${fiesta ? 'Fiesta — Martu' : 'Misa — Martu'}`, 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+  const link = document.createElement('a'); link.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' })); link.download = 'invitacion-martu.ics'; link.click(); URL.revokeObjectURL(link.href);
 }));
 
 $('[data-song-form]').addEventListener('submit', (event) => { event.preventDefault(); $('[data-song-message]').textContent = '¡Gracias por la sugerencia!'; event.currentTarget.reset(); });
